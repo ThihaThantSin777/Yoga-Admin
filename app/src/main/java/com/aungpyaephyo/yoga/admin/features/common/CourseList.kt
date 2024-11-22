@@ -84,7 +84,7 @@ private fun CourseItemView(
                 .padding(vertical = 10.dp)
         ) {
             Row(
-                verticalAlignment = Alignment.Bottom,
+                verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween, // Ensures space between items
                 modifier = Modifier
                     .fillMaxWidth() // Ensures the Row takes up full width
@@ -102,7 +102,7 @@ private fun CourseItemView(
                 }
                 Text(
                     color = Color.Black,
-                    fontSize = 32.sp,
+                    fontSize = 21.sp,
                     text = course.typeOfClass.displayName,
                     style = MaterialTheme.typography.titleLarge
                 )
@@ -135,10 +135,9 @@ private fun CourseItemView(
                     .padding(horizontal = 20.dp),
                 text = course.description.ifBlank { "No description." },
                 style = MaterialTheme.typography.bodyLarge,
-                maxLines = 1,
+                maxLines = 3,
                 overflow = TextOverflow.Ellipsis
             )
-            Spacer(Modifier.size(12.dp))
 
             YogaClasses(
                 modifier = Modifier
@@ -183,6 +182,7 @@ private fun YogaClasses(
         modifier = modifier
     ) {
         if (yogaClasses.isEmpty()) {
+            Spacer(Modifier.size(12.dp))
             Text(
                 text = "No classes are available at the moment.",
                 style = MaterialTheme.typography.bodyLarge.copy(
