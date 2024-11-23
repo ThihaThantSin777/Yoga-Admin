@@ -28,10 +28,6 @@ data class YogaCourseEntity(
     val description: String,
     @ColumnInfo(name = "difficulty_level")
     val difficultyLevel: DifficultyLevel,
-//    @ColumnInfo(name = "cancellation_policy")
-//    val cancellationPolicy: CancellationPolicy,
-//    @ColumnInfo(name = "target_audience")
-//    val targetAudience: TargetAudience,
     @ColumnInfo(name = "event_type")
     val eventType: YogaEventType,
     val latitude: Double,
